@@ -29,9 +29,9 @@ const currentUrl = window.location.pathname;
 
 if (currentUrl === '/') {
   document.querySelector('#home-link').classList.add('active');
-} else if (currentUrl === '/resume.html') {
+} else if (currentUrl === '/resume') {
   document.querySelector('#resume-link').classList.add('active');
-} else if (currentUrl === '/portfolio.html') {
+} else if (currentUrl === '/portfolio') {
   document.querySelector('#portfolio-link').classList.add('active');
   document.querySelector('#portfolio-link > ul > li').classList.add('active-child');
 }
