@@ -5,13 +5,13 @@ class Header extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <div class="logo-link">              
-                <a href=""><img src="images/jm-logo-dark.png"/></a>
+                <a href=""><img src="/images/jm-logo-dark.png"/></a>
             </div>
             <ul class="nav-bar">
-                <li id="home-link"><a href=".">Home</a></li>
-                <li id="resume-link" ><a href="/resume.html">Resume</a></li>
+                <li id="home-link"><a href="/">Home</a></li>
+                <li id="resume-link" ><a href="/resume/">Resume</a></li>
                 <li id="portfolio-link">
-                    <a href="/portfolio.html">Portfolio</a>
+                    <a href="/portfolio/">Portfolio</a>
                     <ul class="sub-menu">
                         <li><a href="#">Cote d'Ivoire</a></li>
                         <li><a href="#">Other</a></li>
