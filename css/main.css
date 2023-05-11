@@ -8,10 +8,15 @@ html {
     color: rgba(26,26,26,.7);
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    width: 100%;
+    height: 100%;
 }
 
 body {
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -29,11 +34,23 @@ body {
 }
 
 .home-banner {
-    background-image: url("../images/header-banner.jpg");
+    background-image: url("../images/banner-header.jpg");
 }
 
-.resume-banner {
-    background-image: url("../images/header-banner-resume.jpg");
+.banner-peacebuilding {
+    background-image: url("../images/banner-cotedivoire2.jpg");
+}
+
+.banner-prf {
+    background-image: url("../images/banner-election.jpg");
+}
+
+.banner-resume {
+    background-image: url("../images/banner-cotedivoire.jpg");
+}
+
+.banner-journalism {
+    background-image: url("../images/banner-rwanda.png");
 }
 
 .home-link {
@@ -53,18 +70,23 @@ body {
     display: flex;
     height: 30px;
     justify-content: flex-end;
-    padding-right: 2em;
+    padding-right: 5em;
 }
 
+.port-nav-menu {
+    display: flex   ;
+    align-items: start;
+}
 
-.nav-bar li {
+.nav-bar li, .port-nav-menu li {
     font-weight: 400;
     list-style: none;
     padding: 5px 15px 5px 15px;
     position: relative;   
+    white-space: nowrap;
 }
 
-.nav-bar li a, .nav-bar ul.sub-menu li a {
+.nav-bar li a, .nav-bar ul.sub-menu li a, .port-nav-menu li a  {
     color: rgba(26,26,26, .7); 
     text-decoration: none;
 }
@@ -90,7 +112,7 @@ body {
     background-color: rgb(255, 255, 255);;
     box-shadow: 0 2px 2px rgba(0,0,0,0.1);
     display: none;
-    font-size: 16px;
+    font-size: 14px;
     left: 0;
     padding: 0;
     position: absolute;
@@ -100,8 +122,7 @@ body {
 
 .sub-menu li {
     border-right: none;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding: 5px 10px 5px 15px;
     width: 100%;
     white-space: nowrap;
 }
@@ -117,6 +138,7 @@ body {
         "main-copy profile-picture";
     grid-template-columns: 2fr 1fr;
 }
+
 
 .main-copy {
     grid-area: main-copy;
@@ -143,11 +165,14 @@ body {
 
 .footer {
     align-items: center;
+    height: 50px;
     border-top:solid 1px rgba(67, 64, 64, 0.2);
     display: flex;    
     font-size: 16px;
     margin-top: 20px;
-    padding: 20px;
+    padding: 20px; 
+    width: 100%;
+    margin-top: auto;
 }
 
 .footer a {
@@ -209,4 +234,66 @@ body {
 .education-details {
     border-top:solid 1px rgba(44, 42, 42, 0.2);
     padding: 0 1em 0 1em;
+}
+
+
+.portfolio-page {
+    display: grid;
+    column-gap: 30px;
+    width: 100%;
+    padding: 1em 3em 0 3em;
+    margin: 0 auto;
+    grid-template-areas:
+        "port-nav-menu articles";
+    grid-template-columns: 1fr 5fr; 
+    grid-template-rows: auto auto;
+}
+
+.port-nav-menu {
+    grid-area: port-nav-menu;
+    font-size: 1em;
+    margin-top: 3em;
+    text-align:left;
+}
+
+.port-nav-menu li:hover a {
+    color: rgba(26, 26, 26, 1);
+}
+
+.port-nav-menu li.active a {
+    color: rgba(26, 26, 26, 1);
+}
+
+
+.articles {
+    grid-area: articles;
+    text-align: justify;
+    /* margin: 2em 0 2em 0; */
+}
+
+.articles section {
+    padding: 1em 0;
+}
+
+.articles ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.articles li {
+    padding-bottom: 2em;
+}
+
+.articles li p {
+    margin: 5px 0;
+}
+
+.articles a {
+    color: rgba(42, 35, 111, 0.7);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.italic {
+    font-style: italic;
 }
