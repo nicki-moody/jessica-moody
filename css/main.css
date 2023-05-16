@@ -228,6 +228,11 @@ body {
     color: rgba(26,26,26, .7); 
     text-decoration: none;
 }
+.nav-bar li.active {
+    display: flex;
+    align-items: center;
+    
+}
 
 .nav-bar li.active a, ul.sub-menu li.active-child a {
     color: rgba(26, 26, 26, 1);
