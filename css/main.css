@@ -1,3 +1,8 @@
+
+:root {
+    --button-size: 1em;
+}
+
 /* apply a natural box layout model to all elements, but allowing components to change */
 *, *:before, *:after {
     box-sizing: inherit;
@@ -24,13 +29,13 @@ body {
     background-color: rgb(255 255 255 / 1);
     display: flex;
     font-size: 18px;
-    height: 60px;
+    height: 50px;
     justify-content: space-between;   
 }
 
 .banner {
     background-size:cover;
-    height: 200px;
+    height: 300px;
 }
 
 .home-banner {
@@ -65,12 +70,142 @@ body {
     width: 200px;
 }
 
+
 .nav-bar {
     align-items: center;
     display: flex;
     height: 30px;
     justify-content: flex-end;
-    padding-right: 5em;
+    padding-right: 3em;
+}
+
+@media screen and (max-width: 767px) {
+
+    .nav-panel {
+        display: none;
+        background-color: rgba(255 255 255 / 1);
+        padding: 10px;
+    }
+
+    .lines-button {
+        display: inline-block;
+        padding: calc(var(--button-size)/2) calc(var(--button-size)/4);
+        transition: .3s;
+        cursor: pointer;
+        user-select: none;
+        background: white;
+        border-radius: calc(var(--button-size)/7);
+        z-index: 1;
+    }
+    
+    .lines-button:hover {
+        opacity: 1;
+    } 
+        
+    .lines {
+        display: inline-block;
+        width: var(--button-size);
+        height: calc(var(--button-size)/7);
+        background-color: rgba(0,0,0,1);
+        border-radius: calc(var(--button-size)/14); 
+        transition: .3s;
+        position: relative; 
+        margin: 0.5em;
+    }
+    
+    /*create the upper and lower lines as pseudo-elements of the middle line*/
+    .lines:before, .lines:after {
+        display: inline-block;
+        width: var(--button-size);
+        height: calc(var(--button-size)/7);
+        background: rgba(0,0,0,1);
+        border-radius: calc(var(--button-size)/14); 
+        transition: 0.3s;
+        position: absolute;
+        left:0;
+        content: '';
+        transform-origin: calc(var(--button-size)/14) center;
+    }
+    .lines:before { top: calc(-1 * var(--button-size)/4); }
+    .lines:after { top: calc(var(--button-size)/4); }
+
+    .lines-button.nav-open {
+        position: relative;
+        right: 200px;
+    }
+
+    .lines-button.nav-open .lines {
+        background: transparent;
+    }
+      
+    .lines-button.nav-open .lines:before, .lines-button.nav-open .lines:after {
+        transform-origin: 50% 50%;
+        top:0;
+        width: var(--button-size);
+     }
+
+     .lines-button.nav-open .lines:before {
+        transform: rotate3d(0,0,1,45deg); 
+    }
+
+    .lines-button.nav-open .lines:after {
+        transform: rotate3d(0,0,1,-45deg); 
+    }
+
+     .nav-panel.open {
+        display: flex;
+        align-items: flex-start;
+        justify-content: left;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 200px;
+        position: fixed; 
+        background-color: white;
+        padding-top: 1em;
+    }
+
+    .line {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 3px;
+    }
+
+    .open .sub-menu {
+        border: 0;
+        box-shadow: none;
+        padding-left: 1em;
+    }
+/*     
+    nav-panel.open .lines:nth-child(1), nav-panel.open .lines:nth-child(3) {
+        transform: translate(0px, 13px) rotate(-45deg) scalex(1.3);
+        margin: 0;
+    }
+
+    nav-panel.open .lines:nth-child(2){
+        height: 0;
+        margin: 0;
+    }
+
+    nav-panel.open .lines:nth-child(3){
+        transform: translate(0px, 9px) rotate(45deg) scalex(1.3);               
+    } */
+
+    .nav-bar {
+        display: none;
+        height: auto;
+        list-style: none;
+        padding: 0;
+    }
+    
+    .nav-panel.open .nav-bar {
+        display: block;
+    }
+
+    .nav-bar li {
+        float: none;
+    }
 }
 
 .port-nav-menu {
@@ -79,6 +214,7 @@ body {
 }
 
 .nav-bar li, .port-nav-menu li {
+    cursor: pointer;  
     font-weight: 400;
     list-style: none;
     padding: 5px 15px 5px 15px;
@@ -90,10 +226,15 @@ body {
     color: rgba(26,26,26, .7); 
     text-decoration: none;
 }
+.nav-bar li.active {
+    display: flex;
+    align-items: center;
+    
+}
 
 
 .nav-bar li.active a, ul.sub-menu li.active-child a {
-    color: rgba(26, 26, 26, 1); 
+    color: rgba(26, 26, 26, 1);
 }
 
 .nav-bar li:hover a, ul.sub-menu li:hover a {
@@ -101,9 +242,29 @@ body {
 }
 
 
-.nav-bar li:hover > ul,
-.nav-bar li.show > ul {
-    display: block;    
+/* .nav-bar li:hover > ul, */
+.nav-bar .show {
+    display: block;  
+}
+
+.nav-bar .has-submenu {
+    column-gap: 10px;
+}
+
+.nav-bar .has-submenu:after {
+    content: '';
+    border: solid #c4c3c0;
+    border-width: 0 2px 2px 0;
+    width: 7px;
+    height: 7px;
+    margin-top: 0.5em;
+    pointer-events: none;
+    transition: transform 0.1s ease-in-out;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.nav-bar .has-submenu.is-open:after {
+    transform: translateY(-50%) rotate(225deg);
 }
 
 
