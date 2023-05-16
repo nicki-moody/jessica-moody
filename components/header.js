@@ -7,18 +7,22 @@ class Header extends HTMLElement {
             <div class="logo-link">              
                 <a href=""><img src="/images/jm-logo-dark.png"/></a>
             </div>
-            <ul class="nav-bar">
-                <li id="home-link"><a href="/">Home</a></li>
-                <li id="resume-link" ><a href="/resume/">Resume</a></li>
-                <li id="portfolio-link">
-                    <a href="/portfolio/peacebuilding">Portfolio</a>
-                    <ul class="sub-menu">
-                        <li id="peacebuilding-link"><a href="/portfolio/peacebuilding">Peacebuilding</a></li>
-                        <li id="journalism-link"><a href="/portfolio/journalism">Journalism</a></li>
-                        <li id="politicalrisk-link"><a href="/portfolio/politicalriskforecasting">Political Risk Forecasting</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <a class="lines-button navbar-toggle">
+                <span class="lines"></span>
+            </a>
+            <nav class="nav-panel">
+                <ul class="nav-bar">
+                    <li id="home-link"><a href="/">Home</a></li>
+                    <li id="portfolio-link" class="has-submenu">
+                        <a>Portfolio</a>
+                        <ul class="sub-menu">
+                            <li id="peacebuilding-link"><a href="/portfolio/peacebuilding">Peacebuilding</a></li>
+                            <li id="journalism-link"><a href="/portfolio/journalism">Journalism</a></li>
+                            <li id="politicalrisk-link"><a href="/portfolio/politicalriskforecasting">Political Risk Forecasting</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         `;
     }   
 }
@@ -30,8 +34,6 @@ const currentUrl = window.location.pathname;
 
 if (currentUrl === '/') {
     document.querySelector('#home-link').classList.add('active');
-} else if (currentUrl === '/resume') {
-    document.querySelector('#resume-link').classList.add('active');
 } else if (currentUrl.includes('/portfolio/')) {
     document.querySelector('#portfolio-link').classList.add('active');
 
@@ -54,4 +56,13 @@ menuItems.forEach((menuItem) => {
         subMenu.classList.toggle("show");
         });
     }
+});
+
+document.querySelector('.navbar-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-panel').classList.toggle('open');
+    document.querySelector('.lines-button').classList.toggle('nav-open');
+  });
+
+document.querySelector('#portfolio-link').addEventListener('click', function() {
+  document.querySelector('#portfolio-link').classList.toggle('is-open');
 });
