@@ -51,8 +51,7 @@ if (currentUrl === '/') {
 menuItems.forEach((menuItem) => {
     const subMenu = menuItem.querySelector("ul");
     if (subMenu) {
-        const menuItemLink = menuItem.querySelector("a");
-        menuItemLink.addEventListener("click", (event) => {
+            menuItem.addEventListener("click", (event) => {
             subMenu.classList.toggle("show");
         });
 

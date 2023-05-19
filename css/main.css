@@ -98,10 +98,7 @@ body {
     text-decoration: none;
 }
 
-.nav-bar li.active a, ul.sub-menu li.active-child a {
-    color: rgba(26, 26, 26, 1);
-}
-
+.nav-bar li.active a, ul.sub-menu li.active-child a,
 .nav-bar li:hover a, ul.sub-menu li:hover a {
     color: rgba(26, 26, 26, 1); 
 }   
@@ -110,11 +107,11 @@ body {
     display: block;  
 }
 
-.nav-bar .has-submenu {
+.nav-bar li.has-submenu {
     column-gap: 10px;
 }
 
-.nav-bar .has-submenu:after {
+.nav-bar li.has-submenu:after {
     content: '';
     border: solid #c4c3c0;
     border-width: 0 2px 2px 0;
@@ -126,7 +123,7 @@ body {
     transform: translateY(-50%) rotate(45deg);
 }
 
-.nav-bar .has-submenu.is-open:after {
+.nav-bar li.has-submenu.is-open:after {
     transform: translateY(-50%) rotate(225deg);
 }
 
