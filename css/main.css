@@ -229,6 +229,11 @@ body {
     padding-right: 2em;
 }
 
+.port-nav-menu li {
+    font-size: 14px;
+    padding: 0;
+}
+
 .port-nav-menu li:first-child {
     padding-bottom: 1em;
 }
@@ -430,7 +435,7 @@ body {
 
     .port-nav-menu {
         margin: 0;
-    }
+    }    
 
     .port-nav-menu ul {
         display: flex;
@@ -439,6 +444,8 @@ body {
         justify-content: space-evenly;
         padding-right: 0;
         width: 100%;
+        border-bottom: solid 1px rgb(226, 223, 223);
+        padding-bottom: 2em;
     }
 
     .port-nav-menu ul li:first-child{
