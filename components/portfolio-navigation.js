@@ -6,6 +6,7 @@ class PortfolioNavigation extends HTMLElement {
         this.innerHTML = `
             <section class="port-nav-menu"> 
                 <ul>
+                    <li>PORTFOLIO</li>
                     <li id="peacebuilding-sidelink"><a href="/portfolio/peacebuilding">Peacebuilding</a></li>
                     <li id="journalism-sidelink"><a href="/portfolio/journalism">Journalism</a></li>
                     <li id="politicalrisk-sidelink"><a href="/portfolio/politicalriskforecasting">Political Risk Forecasting</a></li>

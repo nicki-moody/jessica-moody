@@ -5,7 +5,7 @@ class Header extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <div class="logo-link">              
-                <a href=""><img src="/images/jm-logo-dark.png"/></a>
+                <a href="/"><img src="/images/jm-logo-dark.png"/></a>
             </div>
             <a class="lines-button navbar-toggle">
                 <span class="lines"></span>
@@ -53,16 +53,26 @@ menuItems.forEach((menuItem) => {
     if (subMenu) {
         const menuItemLink = menuItem.querySelector("a");
         menuItemLink.addEventListener("click", (event) => {
-        subMenu.classList.toggle("show");
+            subMenu.classList.toggle("show");
         });
+
+        // const subMenuItems = subMenu.querySelectorAll('a');
+
+        // subMenuItems.forEach((item) => {
+        //     item.addEventListener('click', (event) => {
+        //         event.stopPropagation(); // Prevent event propagation to parent elements
+        //     });
+        //   });
     }
 });
+
 
 document.querySelector('.navbar-toggle').addEventListener('click', function() {
     document.querySelector('.nav-panel').classList.toggle('open');
     document.querySelector('.lines-button').classList.toggle('nav-open');
   });
 
-document.querySelector('#portfolio-link').addEventListener('click', function() {
-  document.querySelector('#portfolio-link').classList.toggle('is-open');
+document.querySelector('#portfolio-link').addEventListener('click', function(event) {
+    event.stopPropagation()
+    document.querySelector('#portfolio-link').classList.toggle('is-open');
 });
