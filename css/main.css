@@ -223,7 +223,7 @@ body {
 
 .port-nav-menu ul {
     padding-left: 0;
-    padding-right: 2em;
+    padding-right: 1em;
 }
 
 .port-nav-menu li {
@@ -254,6 +254,8 @@ body {
 .port-nav-menu li a {
     color: rgb(149, 147, 182); 
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
 }
 
 .port-nav-menu li:hover a, .port-nav-menu li.active a {
