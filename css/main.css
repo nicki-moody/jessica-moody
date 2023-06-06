@@ -30,7 +30,6 @@ body {
     background-color: rgb(255 255 255 / 1);
     display: flex;
     font-size: 18px;
-    height: 50px;
     justify-content: space-between;   
 }
 
@@ -68,13 +67,12 @@ body {
     padding: 0.5em;
 }
 
-
 .nav-bar {
     align-items: center;
     display: flex;
     height: 30px;
     justify-content: flex-end;
-    padding-right: 3em;
+    padding-right: 3.5em;
 }
 
 .port-nav-menu {
@@ -160,7 +158,6 @@ body {
 .main-copy {
     font-size: 1em;
     margin-left: 2em; 
-    /* margin-right: 1em; */
     text-align: justify;
     flex: 1;
 }
@@ -231,7 +228,6 @@ body {
 
 .port-nav-menu li {
     font-size: 14px;
-    padding: 0;
 }
 
 .port-nav-menu li:first-child {
@@ -283,6 +279,10 @@ body {
 
 .articles li {
     padding-bottom: 2em;
+}
+
+.articles li:last-child {
+    padding-bottom: 0;
 }
 
 .articles li p {
@@ -399,6 +399,7 @@ body {
         position: fixed; 
         background-color: white;
         padding-top: 1em;
+        z-index: 1;
     }
 
     .line {
@@ -445,12 +446,18 @@ body {
         padding-right: 0;
         width: 100%;
         border-bottom: solid 1px rgb(226, 223, 223);
-        padding-bottom: 2em;
+        padding-bottom: 1em;
+        margin-top: 0;
     }
 
-    .port-nav-menu ul li:first-child{
+    .port-nav-menu ul li{
         padding-left: 0;
+    }
+    .port-nav-menu ul li:first-child{
         display: none;
     }
 
-}   
+    .port-nav-menu li:before {
+        content: none;
+    }   
+}
