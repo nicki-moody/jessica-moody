@@ -154,7 +154,6 @@ body {
     justify-content: center;
 }
 
-
 .main-copy {
     font-size: 1em;
     margin-left: 2em; 
@@ -223,7 +222,7 @@ body {
 
 .port-nav-menu ul {
     padding-left: 0;
-    padding-right: 1em;
+    padding-right: 2em;
 }
 
 .port-nav-menu li {
@@ -295,6 +294,10 @@ body {
     color: rgba(42, 35, 111, 0.7);
     text-decoration: none;
     font-weight: 400;
+}
+
+.articles a:visited {
+    color: rgba(99, 92, 149, 0.7);
 }
 
 .italic {
